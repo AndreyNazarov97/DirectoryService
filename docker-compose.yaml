@@ -1,0 +1,6 @@
+﻿services:
+  directoryservice.presentation:
+    image: directoryservice.presentation
+    build:
+      context: .
+      dockerfile: DirectoryService.Presentation/Dockerfile

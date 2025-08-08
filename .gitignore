@@ -6,6 +6,7 @@ riderModule.iml
 
 # Rider
 .idea/
+.vs/
 
 # Default ignored files
 /shelf/
