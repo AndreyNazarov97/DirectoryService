@@ -8,6 +8,7 @@ namespace DirectoryService.Domain.Entities;
 public class Location : SoftDeletableEntity<LocationId>
 {
     private readonly List<Address> _addresses = [];
+    private readonly List<Department> _departments = [];
     
     public Location(
         LocationId id, 
@@ -23,4 +24,5 @@ public class Location : SoftDeletableEntity<LocationId>
     public TimeZone TimeZone { get; private set; }
     
     public IReadOnlyCollection<Address> Addresses => _addresses.AsReadOnly();
+    public IReadOnlyCollection<Department> Departments => _departments.AsReadOnly();
 }

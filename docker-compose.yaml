@@ -1,6 +1,18 @@
-﻿services:
-  directoryservice.presentation:
-    image: directoryservice.presentation
-    build:
-      context: .
-      dockerfile: DirectoryService.Presentation/Dockerfile
+﻿name: directory-service
+
+services:
+  postgres:
+    container_name: 'ds-postgres'
+    image: 'postgres:latest'
+    ports:
+      - '15432:5432'
+    volumes:
+      - ds-pg:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: 'postgres'
+
+
+volumes:
+  ds-pg:
