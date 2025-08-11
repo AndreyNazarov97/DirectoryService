@@ -7,6 +7,9 @@ namespace DirectoryService.Domain.Entities;
 
 public class Department : AggregateRoot<DepartmentId>
 {
+    private readonly List<Position> _positions = [];
+    private readonly List<Location> _locations = [];
+    
     public Department(
         DepartmentId id, 
         DepartmentName name, 
@@ -32,7 +35,7 @@ public class Department : AggregateRoot<DepartmentId>
     public Depth Depth { get; private set; }
     public ChildrenCount ChildrenCount { get; private set; }
     
-    private readonly List<Position> _positions = [];
     public IReadOnlyCollection<Position> Positions => _positions.AsReadOnly();
+    public IReadOnlyCollection<Location> Locations => _locations.AsReadOnly();
     
 }
