@@ -22,5 +22,5 @@ public class Position : SoftDeletableEntity<PositionId>
     public Description? Description { get; private set; }
 
 
-    public IReadOnlyCollection<Department> Departments => _departments.AsReadOnly();
+    public IReadOnlyList<Department> Departments => _departments.AsReadOnly();
 }

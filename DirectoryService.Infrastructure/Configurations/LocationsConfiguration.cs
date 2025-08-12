@@ -46,6 +46,7 @@ public class LocationsConfiguration: IEntityTypeConfiguration<Location>
 
         builder.Property(x => x.TimeZone)
             .IsRequired()
+            .HasMaxLength(100) 
             .HasConversion(d =>  d.Value,
                 v => TimeZone.Create(v).Value)
             .HasColumnName("timezone");

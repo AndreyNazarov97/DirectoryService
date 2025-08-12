@@ -35,7 +35,7 @@ public class Department : AggregateRoot<DepartmentId>
     public Depth Depth { get; private set; }
     public ChildrenCount ChildrenCount { get; private set; }
     
-    public IReadOnlyCollection<Position> Positions => _positions.AsReadOnly();
-    public IReadOnlyCollection<Location> Locations => _locations.AsReadOnly();
+    public IReadOnlyList<Position> Positions => _positions.AsReadOnly();
+    public IReadOnlyList<Location> Locations => _locations.AsReadOnly();
     
 }

@@ -23,6 +23,6 @@ public class Location : SoftDeletableEntity<LocationId>
     public LocationName Name { get; private set; }
     public TimeZone TimeZone { get; private set; }
     
-    public IReadOnlyCollection<Address> Addresses => _addresses.AsReadOnly();
-    public IReadOnlyCollection<Department> Departments => _departments.AsReadOnly();
+    public IReadOnlyList<Address> Addresses => _addresses.AsReadOnly();
+    public IReadOnlyList<Department> Departments => _departments.AsReadOnly();
 }
