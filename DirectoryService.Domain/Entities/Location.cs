@@ -25,4 +25,8 @@ public class Location : SoftDeletableEntity<LocationId>
     
     public IReadOnlyList<Address> Addresses => _addresses.AsReadOnly();
     public IReadOnlyList<Department> Departments => _departments.AsReadOnly();
+    
+    public void AddAddress(Address address) => _addresses.Add(address);
+    public void AddAddresses(IEnumerable<Address> addresses) => _addresses.AddRange(addresses);
+    
 }

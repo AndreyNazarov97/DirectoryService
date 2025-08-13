@@ -1,5 +1,7 @@
-﻿using DirectoryService.Infrastructure.DbContexts;
+﻿using DirectoryService.Application.UseCases.CreateLocation;
+using DirectoryService.Infrastructure.DbContexts;
 using DirectoryService.Infrastructure.Options;
+using DirectoryService.Infrastructure.Storages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +15,7 @@ public static class DependencyInjection
     {
         services
             .AddDbContext(configuration)
-            .AddRepositories();
+            .AddStorages();
         
         return services;
     }
@@ -28,8 +30,13 @@ public static class DependencyInjection
         return services;
     }
     
-    private static IServiceCollection AddRepositories(this IServiceCollection services)
+    private static IServiceCollection AddStorages(this IServiceCollection services)
     {
+        services
+            .AddScoped<ICreateLocationStorage, CreateLocationStorage>();
+        
+        
+        services.AddScoped<IMomentProvider, MomentProvider>();
         
         return services;
     }

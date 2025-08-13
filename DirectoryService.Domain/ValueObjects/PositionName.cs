@@ -13,7 +13,7 @@ public record PositionName: IValueObject<string>
 
     public static Result<PositionName, Error> Create(string name)
     {
-        if (string.IsNullOrEmpty(name))
+        if (string.IsNullOrWhiteSpace(name))
             return Errors.General.ValueIsInvalid(nameof(PositionName));
         
         if(name.Length is > PositionNameConstants.MAX_LENGTH or < PositionNameConstants.MIN_LENGTH)

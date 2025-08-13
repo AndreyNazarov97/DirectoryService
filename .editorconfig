@@ -149,13 +149,13 @@ csharp_prefer_simple_using_statement = false:none
 csharp_style_prefer_switch_expression = true:suggestion
 
 # Expression-bodied members
-csharp_style_expression_bodied_methods = true
+csharp_style_expression_bodied_methods = false:none
 csharp_style_expression_bodied_constructors = true
 csharp_style_expression_bodied_operators = true
 csharp_style_expression_bodied_properties = true
 csharp_style_expression_bodied_indexers = true
 csharp_style_expression_bodied_accessors = true
-csharp_style_expression_bodied_lambdas = true
+csharp_style_expression_bodied_lambdas = false:error
 csharp_style_expression_bodied_local_functions = true
 
 # Pattern matching

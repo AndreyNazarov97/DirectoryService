@@ -13,7 +13,7 @@ public record DepartmentName : IValueObject<string>
 
     public static Result<DepartmentName, Error> Create(string name)
     {
-        if (string.IsNullOrEmpty(name))
+        if (string.IsNullOrWhiteSpace(name))
             return Errors.General.ValueIsInvalid(nameof(DepartmentName));
         
         if(name.Length is > DepartmentNameConstants.MAX_LENGTH or < DepartmentNameConstants.MIN_LENGTH)

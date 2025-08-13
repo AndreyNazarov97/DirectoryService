@@ -13,7 +13,7 @@ public record Description: IValueObject<string>
 
     public static Result<Description, Error> Create(string name)
     {
-        if (string.IsNullOrEmpty(name))
+        if (string.IsNullOrWhiteSpace(name))
             return Errors.General.ValueIsInvalid(nameof(Description));
         
         if(name.Length is > PositionNameConstants.MAX_LENGTH)

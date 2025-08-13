@@ -13,7 +13,7 @@ public record LocationName: IValueObject<string>
 
     public static Result<LocationName, Error> Create(string name)
     {
-        if (string.IsNullOrEmpty(name))
+        if (string.IsNullOrWhiteSpace(name))
             return Errors.General.ValueIsInvalid(nameof(LocationName));
         
         if(name.Length is > LocationNameConstants.MAX_LENGTH or < LocationNameConstants.MIN_LENGTH)

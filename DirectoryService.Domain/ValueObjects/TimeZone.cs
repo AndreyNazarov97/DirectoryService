@@ -18,7 +18,7 @@ public static Result<TimeZone, Error> Create(string ianaId)
     
     try
     {
-        TimeZoneInfo.FindSystemTimeZoneById(ianaId);
+      var timeZone =  TimeZoneInfo.FindSystemTimeZoneById(ianaId);
     }
     catch (TimeZoneNotFoundException)
     {

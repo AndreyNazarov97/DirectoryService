@@ -5,6 +5,9 @@ public abstract class Entity<TId> where TId : IEntityId
     public TId Id { get; }
     public DateTimeOffset? CreatedAt { get; protected set; }    
     public DateTimeOffset? UpdatedAt { get; protected set; }
+    
+    public void SetCreatedAt(DateTimeOffset createdAt) => CreatedAt = createdAt;
+    public void SetUpdatedAt(DateTimeOffset updatedAt) => UpdatedAt = updatedAt;
 
     protected Entity(TId id)
     {

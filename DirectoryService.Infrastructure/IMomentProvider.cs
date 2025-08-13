@@ -1,0 +1,12 @@
+﻿namespace DirectoryService.Infrastructure
+{
+    public interface IMomentProvider
+    {
+        DateTimeOffset Now { get; }
+    }
+
+    public class MomentProvider : IMomentProvider
+    {
+        public DateTimeOffset Now => DateTimeOffset.UtcNow;
+    }
+}

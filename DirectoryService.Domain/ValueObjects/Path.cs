@@ -12,7 +12,7 @@ public record Path: IValueObject<string>
 
     public static Result<Path, Error> Create(string name)
     {
-        if (string.IsNullOrEmpty(name))
+        if (string.IsNullOrWhiteSpace(name))
             return Errors.General.ValueIsInvalid(nameof(Path));
         
         
